@@ -4,13 +4,18 @@ using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 using APIMidway.Data;
 using APIMidway.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+
 
 
 
 namespace APIMidway.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
+    
     public class EmpleadosController : ControllerBase
     {
         private readonly ILogger<EmpleadosController> _logger;
@@ -67,8 +72,8 @@ namespace APIMidway.Controllers
         [HttpDelete("{UPN}")]
         public async Task<ActionResult<Empleado>> Delete(string UPN)
         {
+                      
             var empleado = await _context.Empleados.FindAsync(UPN);
-
             if (empleado == null)
             {
                 return NotFound();

@@ -6,6 +6,7 @@ namespace APIMidway.Models
     {
         [Key]
         public string UPN { get; set; } = string.Empty;
+        public string password { get; set; } = string.Empty;
         public string Nombre { get; set; } = string.Empty;
         public string Apellidos { get; set; } = string.Empty;
         public DateTime FechaNacimiento { get; set; }

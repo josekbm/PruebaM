@@ -14,7 +14,7 @@ namespace APIMidway.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("/[controller]")]
     
     public class EmpleadosController : ControllerBase
     {

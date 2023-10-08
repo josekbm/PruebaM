@@ -61,12 +61,15 @@ namespace APIMidway.Controllers
                     jwt.Issuer,
                     jwt.Audience,
                     claims,
-                    expires: DateTime.Now.AddMinutes(60),
+                    expires: DateTime.Now.AddMinutes(120),
                     signingCredentials: singIn
                 );
                 return new 
                 {   
                     success = true,
+                    upn = usuario.UPN,
+                    nombre = usuario.Nombre,
+                    apellidos = usuario.Apellidos,
                     message = "Exito", 
                     result = new JwtSecurityTokenHandler().WriteToken(token)
                 };

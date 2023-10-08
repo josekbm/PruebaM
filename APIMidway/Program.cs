@@ -12,6 +12,20 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<DataContext>(
     options => options.UseSqlite(connectionString)
 );
+var proveedor = builder.Services.BuildServiceProvider();
+var configuration = proveedor.GetRequiredService<IConfiguration>();
+
+builder.Services.AddCors(options => 
+{
+   var frontendURL = configuration.GetValue<string>("frontend_url");
+
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins(frontendURL).AllowAnyHeader().AllowAnyMethod();
+    });
+    
+});
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -43,6 +57,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 

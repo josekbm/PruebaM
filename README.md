@@ -6,7 +6,7 @@ Para poder probar la API, hacer un git-clone. En un principio están subidos tod
 # 1. Descargar .net7
 Descargamos la versión x64 de .net7 del siguiente enlace https://dotnet.microsoft.com/es-es/download.
 # 2. Hacer un git clone del repo.
-git clone https://github.com/josekbm/Prueba-tecnica-Midway
+git clone https://github.com/josekbm/PruebaM
 # 3. Iniciar la API.
 instalar las extensiones de Visual Studio Code que fuesen necesarias (C#, .net Runtime Install tool)
 Abrir la terminal dentro de VSC (ctrl ñ), navigar hasta la carpeta **APIMidway** e introducir el comando **dotnet run**. La api se iniciará en http://localhost:5282

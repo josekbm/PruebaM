@@ -61,7 +61,7 @@ namespace APIMidway.Controllers
                     jwt.Issuer,
                     jwt.Audience,
                     claims,
-                    //expires: DateTime.Now.AddMinutes(120), Descomentar para añadir tiempo de expiración al token a partir de su emisión.
+                    //expires: DateTime.Now.AddMinutes(120), //Descomentar para añadir caducidad después de su emisión
                     signingCredentials: singIn
                 );
                 return new 

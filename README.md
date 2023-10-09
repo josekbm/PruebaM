@@ -18,4 +18,4 @@ Utilizando Postman o ThunderClient hacemos una petición POST a **http://localho
     "password":"admin"
   }
 Esta petición generará como respuesta un token, que deberemos copiar para poner como método de autenticación "Bearer" si queremos hacer peticiones GET, POST, PUT o DELETE. La API obtiene la información de una base de datos en SQLite.
-Hasta aquí llegaría la comprobación de la API. Podemos dejarla arrancada en ese puerto y continuar con el front-end de React que consume la API en [https://github.com/josekbm/Frontend-Midway](https://github.com/josekbm/Frontend-Midway)https://github.com/josekbm/Frontend-Midway
+Hasta aquí llegaría la comprobación de la API. Podemos dejarla arrancada en ese puerto y continuar con el front-end de React que consume la API en https://github.com/josekbm/Frontend-Midway

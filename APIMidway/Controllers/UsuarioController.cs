@@ -51,6 +51,8 @@ namespace APIMidway.Controllers
                     new Claim("UPN", usuario.UPN),
                     new Claim("Nombre", usuario.Nombre),
                     new Claim("Apellidos", usuario.Apellidos),
+                    new Claim("FechaNacimiento", usuario.FechaNacimiento.ToString()),
+                    
                     
                 };
 
@@ -70,6 +72,7 @@ namespace APIMidway.Controllers
                     upn = usuario.UPN,
                     nombre = usuario.Nombre,
                     apellidos = usuario.Apellidos,
+                    fechaNacimiento = usuario.FechaNacimiento,
                     message = "Exito", 
                     result = new JwtSecurityTokenHandler().WriteToken(token)
                 };

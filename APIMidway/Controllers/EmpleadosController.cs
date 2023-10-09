@@ -46,7 +46,7 @@ namespace APIMidway.Controllers
         
         //implementar httppost
         [HttpPost]
-        public async Task<ActionResult<Empleado>> Post(Empleado empleado)
+        public async Task<ActionResult<Empleado>> Post(string password, Empleado empleado)
         {
             _context.Empleados.Add(empleado);
             await _context.SaveChangesAsync();
@@ -56,7 +56,7 @@ namespace APIMidway.Controllers
         
         //implementar httpput("{UPN}") 
         [HttpPut("{UPN}")]
-        public async Task<ActionResult> Put(string UPN, Empleado empleado)
+        public async Task<ActionResult> Put(string UPN, string password, Empleado empleado)
         {
             if (UPN != empleado.UPN)
             {
